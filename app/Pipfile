@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Flask = "==3.0.3"
+requests = "==2.27.1"
+[dev-packages]
+
+[pipenv]
+allow_prereleases = true
+
+[requires]
+python_version = "3.12.4"
