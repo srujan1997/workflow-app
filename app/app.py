@@ -2,6 +2,8 @@ from flask import Flask
 
 from config import Config
 from ping import ping
+from workflow import workflow
+from user import user
 
 
 def create_app(app_name=""):
@@ -21,6 +23,8 @@ def create_app(app_name=""):
 
     with app.app_context():
         app.register_blueprint(ping, url_prefix=f"{BASE_URL_PREFIX}/ping")
+        app.register_blueprint(workflow, url_prefix=f"{BASE_URL_PREFIX}/workflow")
+        app.register_blueprint(user, url_prefix=f"{BASE_URL_PREFIX}/user")
 
     @app.teardown_request
     def teardown_request(exception):
