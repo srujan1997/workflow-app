@@ -1,8 +1,8 @@
 # workflow-app
 Workflow Management Backend
 
-[Design Document] (https://github.com/srujan1997/Trading_App/blob/main/docs/design_document.pdf)
-[API Document] (https://github.com/srujan1997/Trading_App/blob/main/docs/design_document.pdf)
+[Design Document] (https://github.com/srujan1997/workflow-app/blob/main/app/docs/workflow_design.pdf)
+[API Document] (https://github.com/srujan1997/workflow-app/blob/main/app/docs/workflow_api.pdf)
 
 # Instructions to Run:
 1. cd {download_path}/workflow-app/app
