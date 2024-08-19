@@ -1,5 +1,4 @@
 import json
-import error_codes
 from flask import Response
 
 
@@ -25,7 +24,7 @@ def success_response(return_dict=None, status_code=200):
     return response
 
 
-def error_response(error_code=error_codes.UNKNOWN, error_text="Something went wrong", status_code=400):
+def error_response(error_code=3000, error_text="Something went wrong", status_code=500):
     """
     Description: Helper to create API error responses
     :param error_code: int
@@ -39,36 +38,3 @@ def error_response(error_code=error_codes.UNKNOWN, error_text="Something went wr
     response.headers["Content-type"] = "application/json"
     response.status_code = status_code
     return response
-
-
-###########################
-# Code Specific Responses #
-###########################
-
-
-def success(return_dict):  # Helper to create success response for API controller
-    status_code = 200
-    return success_response(return_dict, status_code)
-
-
-def created(return_dict):  # Helper to return created response for API controller
-    status_code = 201
-    return success_response(return_dict, status_code)
-
-
-def bad_request(error_code=error_codes.INPUT_ERROR, error_text="Invalid Request"):
-    # Helper to create bad request response for API controller
-    status_code = 400
-    return error_response(error_code, error_text, status_code)
-
-
-def not_found(error_code=error_codes.RESOURCE_NOT_FOUND, error_text="Resource not found"):
-    # Helper to create request not found response for API controller
-    status_code = 404
-    return error_response(error_code, error_text, status_code)
-
-
-def internal_server_error(error_code=error_codes.UNKNOWN, error_text="Something went wrong"):
-    # Helper to handle internal server errors for API controller.
-    status_code = 500
-    return error_response(error_code, error_text, status_code)
