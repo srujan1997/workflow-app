@@ -10,7 +10,7 @@ from workflow.workflow_models import workflows
 @user.route("/workflow/add", methods=["POST"])
 def add_workflow():
     user_id = request.args.get("user_id")  # This can be changed when authentication layer is developed.
-    workflow_id = request.args.get("workflow")
+    workflow_id = request.args.get("workflow_id")
     if not user_id:
         return error_response(400, "Requires a valid user.")
 
